@@ -1,0 +1,52 @@
+﻿@model IEnumerable<WebAPI.Models.Departamento>
+
+@{
+    ViewData["Title"] = "Index Ajax";
+}
+
+<div class="p-4">
+    <div>
+        <div class="container">
+            <div class="p-2">
+                <div class="row">
+                    <div class="col-12">
+                        <h6>Cadastrando departamentos</h6>
+                    </div>
+                    <div class="col-10">
+                        <button type="button" class="btn btn-outline-info novoDepartamento" id="novoDepartamento">Cadastrar novo departamento</button>
+                    </div>
+                    <br><br>
+                    <div class="p-3 col-10" id="divTabela">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="modal" class="modal fade">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title">Cadastro de departamentos</h5>
+            </div>
+
+            <div class="modal-body">
+                <input type="hidden"class="form-control form-control-sm depID" id="depID" />
+                <div>
+                    <label>Nome do departamento</label>
+                    <input type="text" class="form-control form-control-sm nome"id="nome" />
+                    <span class="text-warning erroNome d-none"></span>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger btnSalvar">Salvar</button>
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>

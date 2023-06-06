@@ -1,0 +1,67 @@
+﻿@model IEnumerable<WebAPI.Models.Vendedor>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="p-4">
+    <div>
+        <div class="container">
+            <div class="p-2">
+                <div class="row">
+                    <div class="col-12">
+                        <h6>Cadastrando vendedores</h6>
+                    </div>
+                    <div class="col-10">
+                        <button type="button" class="btn btn-outline-info novoVendedor" id="novoVendedor">Cadastrar novo vendedor</button>
+                    </div>
+                    <br><br>
+                    <div class="p-3 col-10" id="tabelaDiv">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div id="Modal" class="modal fade">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-Title">Cadastrando novo vendedor</h5>
+            </div>
+
+            <div class="modal-body">
+                <input type="hidden" class="form-control form-control-sm vendedorID" id="vendedorID" />
+                <div class="form-group">
+                    <label>Nome do vendedor</label>
+                    <input type="text" class="form-control form-control-sm nomevendedor" id="nomevendedor" />
+                    <span class="text-warning erroNomevendedor d-none"></span>
+                </div>
+                <div class="form-group">
+                    <label>Email do vendedor</label>
+                    <input type="text" class="form-control form-control-sm email" id="email" />
+                    <span class="text-warning erroEmail d-none"></span>
+                </div>
+                <div class="form-group">
+                    <label>Salario vendedor</label>
+                    <input type="text" class="form-control form-control-sm salario" id="salario" />
+                    <span class="text-warning erroSalario d-none"></span>
+                </div>
+               <!--
+                    <div class="form-group">
+                     <label>Departamento ID</label>
+                     <select id="departamento" name="departamento" class="form-control form-control-sm departamento">
+                         <option>Selecione o departamento desse vendedor</option>
+                         <option></option>
+                     </select>
+                 </div>
+
+               --> 
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-outline-danger btnsalvar">Salvar</button>
+                <button type="button" class="btn btn-outline-danger" data-bs-dismiss="modal">Cancelar</button>
+            </div>
+        </div>
+    </div>
+</div>
